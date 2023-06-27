@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>如是我聞</title>
+        <link rel="stylesheet" type="text/css" href="buddham.css">
+    </head>
+    <body>
+        <p class="kyo">
+            <p id="kaikoge"></p>
+            <p class="sankye">
+                BUDDHAM SARANAM GACCAMI <br><br>DHAMMAM SARANAM GACCAMI<br><br>SANGHAM SARANAM GACCAMI            
+            </p>
+            <p class="zitai">
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="third"></div>
+                
+               <span>仏は言いました。苦しみは８つあると。<br>
+                生まれること、老いること、病にかかること、死ぬこと<br>
+                愛するものが離れること、憎いものが向かってくること<br>
+                欲しいものがえられないこと、私たちが存在すること<br>
+                これらは全て、因縁や生起です。 </span>              
+            </p>
+        </p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const elm = document.getElementById("kaikoge");
+                const msg = '無上甚深微妙法<br>百千万劫難遭遇<br>我今見聞徳受持<br>願解如来真実義';
+        
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = msg;
+                const filteredMsg = tempDiv.textContent; // HTML タグを削除したテキスト
+        
+                for (let i = 0; i < filteredMsg.length; i++) {
+                    setTimeout(() => {
+                        elm.innerHTML = "";
+                        elm.style.fontSize = "100px";
+                        elm.style.padding = "100px 500px 300px 500px";
+                        elm.style.fontFamily = "游明朝";
+                        elm.innerHTML = filteredMsg[i];
+        
+                        if (i === filteredMsg.length - 1) {
+                            elm.style.textAlign = "left";
+                            elm.style.fontSize = "50px";
+                            elm.style.padding = "100px 350px 150px 350px";
+                            elm.style.fontFamily = "游明朝";
+                            elm.innerHTML = msg;
+                        }
+                    }, 350 * (i + 1));
+                }
+        
+                const allHeight = Math.max(
+                    document.body.scrollHeight, document.documentElement.scrollHeight,
+                    document.body.offsetHeight, document.documentElement.offsetHeight,
+                    document.body.clientHeight, document.documentElement.clientHeight
+                );
+               
+        
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop >= allHeight) {
+                        window.location.href = "C:/Users/森義文/Documents/2023年6月自己紹介サイト/profile ver2.html";
+                    }
+                });
+            });
+        </script>
+        
+        <!--仏法を神秘的に見せたい。開講偈は一文字ずつ、でかでかと写したい。
+        縁起や、四苦八苦について写したい。 -->
+        <!--msgを一文字づつ表記する時、＜ｂｒ＞は読まない。
+        一文字づつ表示するときは、もじの場所が画面中央で、前文表示では、文章の中心が画面中央に存在するよう
+        -->
+    </body>
+</html>
+    
